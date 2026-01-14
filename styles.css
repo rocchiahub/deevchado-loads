@@ -1,0 +1,276 @@
+:root {
+    --bg-color: #0f0f0f;
+    --text-color: #e0e0e0;
+    --card-bg: #1e1e1e;
+    --header-bg: #181818;
+    --btn-bg: #2e7d32;          /* Verde gamer */
+    --btn-hover: #1b5e20;
+    --alert-bg: #f57c00;
+    --section-fifa: #1a3c34;    /* Tom verde FIFA */
+    --section-pes: #0d47a1;     /* Azul PES */
+    --section-l4d: #b71c1c;     /* Vermelho zombie L4D */
+    --section-dirt: #d32f2f;    /* Vermelho rally */
+    --section-indie: #4527a0;   /* Roxo indie criativo */
+}
+
+body.light-mode {
+    --bg-color: #f5f5f5;
+    --text-color: #212121;
+    --card-bg: #ffffff;
+    --header-bg: #eeeeee;
+    --btn-bg: #388e3c;
+    --btn-hover: #2e7d32;
+    --alert-bg: #ef6c00;
+    --section-fifa: #e8f5e9;
+    --section-pes: #e3f2fd;
+    --section-l4d: #ffebee;
+    --section-dirt: #ffebee;
+    --section-indie: #f3e5f5;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    transition: all 0.4s ease;
+    line-height: 1.6;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--header-bg);
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.letras-btn {
+    background-color: #ff5722;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.pd-btn {
+    background-color: #ffc0cb;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.letras-btn:hover {
+    background-color: #e64a19;
+}
+
+.alert-bar {
+    background-color: var(--alert-bg);
+    color: #000;
+    text-align: center;
+    padding: 14px;
+    font-weight: bold;
+    font-size: 1.15em;
+}
+
+header {
+    background-color: var(--header-bg);
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.logo {
+    max-height: 100px;
+    margin-bottom: 15px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    color: #4caf50;
+}
+
+.version {
+    font-size: 1.2em;
+    color: #aaa;
+    display: block;
+    margin-top: 5px;
+}
+
+.intro {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.logos-intro {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.small-logo {
+    height: 60px;
+}
+
+.game-section {
+    padding: 40px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    color: #4caf50;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.game-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.game-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.6);
+}
+
+.game-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.game-card h2 {
+    margin: 15px 10px 5px;
+    font-size: 1.5em;
+}
+
+.game-card p {
+    margin: 0 0 15px;
+    opacity: 0.8;
+    font-size: 0.95em;
+}
+
+.download-buttons {
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.download-btn {
+    background-color: var(--btn-bg);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+    min-width: 140px;
+}
+
+.download-btn:hover {
+    background-color: var(--btn-hover);
+    transform: scale(1.05);
+}
+
+/* Cores por seção (opcional - fundo sutil) */
+.fifa-section { background: var(--section-fifa); }
+.pes-section { background: var(--section-pes); }
+.left4dead-section { background: var(--section-l4d); }
+.dirt-section { background: var(--section-dirt); }
+.indie-section { background: var(--section-indie); }
+
+footer {
+    background-color: var(--header-bg);
+    padding: 25px;
+    text-align: center;
+    margin-top: 60px;
+    border-top: 1px solid #333;
+}
+
+.credits {
+    font-size: 0.95em;
+    opacity: 0.7;
+    margin-top: 10px;
+}
+
+/* Switch de tema (melhorado) */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #555;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
