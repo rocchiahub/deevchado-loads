@@ -19,3 +19,30 @@ toggleSwitch.addEventListener('change', function () {
 
 // Log simples para debug (opcional, pode remover)
 console.log('DeevChado Loads V0.6 carregado! Tema atual:', currentTheme);
+
+const searchInput = document.getElementById('searchInput');
+        const gameCards = document.querySelectorAll('.game-card');
+        const noResults = document.getElementById('noResults');
+
+        searchInput.addEventListener('input', function() {
+            const filter = searchInput.value.toLowerCase().trim();
+
+            let visibleCount = 0;
+
+            gameCards.forEach(card => {
+                const titleElement = card.querySelector('h2');
+                if (!titleElement) return; // segurança
+
+                const title = titleElement.textContent.toLowerCase();
+
+                if (title.includes(filter)) {
+                    card.style.display = ''; // mostra (volta ao default do CSS)
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Mostra mensagem se nada for encontrado
+            noResults.style.display = (visibleCount === 0 && filter !== '') ? 'block' : 'none';
+        });
