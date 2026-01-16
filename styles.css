@@ -67,7 +67,27 @@ body {
 }
 
 .pd-btn {
-    background-color: #ffc0cb;
+    background-color: #00afff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.emucchia-btn {
+    background-color: #120a8f;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.rc-btn {
+    background-color: #03bb85;
     color: white;
     padding: 10px 15px;
     border-radius: 6px;
@@ -214,12 +234,16 @@ header h1 {
 .left4dead-section { background: var(--section-l4d); }
 .dirt-section { background: var(--section-dirt); }
 .indie-section { background: var(--section-indie); }
+.fps-section { background: var(--section-fps); }
+
+
+
 
 footer {
     background-color: var(--header-bg);
     padding: 25px;
     text-align: center;
-    margin-top: 60px;
+    margin-top: 10px;
     border-top: 1px solid #333;
 }
 
