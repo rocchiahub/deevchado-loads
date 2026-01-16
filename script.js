@@ -18,7 +18,7 @@ toggleSwitch.addEventListener('change', function () {
 });
 
 // Log simples para debug (opcional, pode remover)
-console.log('DeevChado Loads V0.6 carregado! Tema atual:', currentTheme);
+console.log('DeevChado Loads V1.14 carregado! Tema atual:', currentTheme);
 
 const searchInput = document.getElementById('searchInput');
         const gameCards = document.querySelectorAll('.game-card');
