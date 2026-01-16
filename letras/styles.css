@@ -1,0 +1,459 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: white;
+  min-height: 100vh;
+  line-height: 1.5;
+  transition: background 0.3s, color 0.3s;
+  margin: 2rem;
+}
+
+body.theme-white {
+  background: #ffffff;
+  color: #000000;
+}
+
+body.theme-orange {
+  background: #ff9800;
+  color: #000000;
+}
+
+header {
+  background: rgba(0,0,0,0.6);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  transition: background 0.3s;
+  margin-bottom: 1.5rem;
+}
+
+.logo {
+  max-width: 180px;
+  margin-bottom: 1rem;
+}
+
+.nav-buttons {
+  margin-bottom: 1rem;
+}
+
+.btn, .poke-btn {
+  padding: 0.6rem 1.2rem;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  margin: 0 0.6rem;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.btn {
+  background: #ff00aa;
+}
+
+.poke-btn {
+  background: #00afff;
+}
+
+.emucchia-btn {
+    background-color: #120a8f;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.rc-btn {
+    background-color: #03bb85;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+
+.btn:hover, .poke-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.theme-toggle {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* ... (o resto do CSS permanece igual ao que você enviou, incluindo .lyrics-modal, .track-list.grid, etc.) ... */
+
+/* Adição pequena para packs */
+#packs-section ul li {
+  margin: 0.8rem 0;
+}
+
+#packs-section .download-btn {
+  margin-left: 1rem;
+  background: #4caf50;
+}
+
+#packs-section .download-btn:hover {
+  background: #388e3c;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #ff9800;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+h1 {
+  font-size: 2.6rem;
+  letter-spacing: 2px;
+  text-shadow: 0 0 15px #ff00aa;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  opacity: 0.9;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 20px;
+}
+
+.card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 1.8rem;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.12);
+  transition: all 0.25s ease, background 0.3s;
+}
+
+body.theme-white .card {
+  background: rgba(0,0,0,0.08);
+  border-color: rgba(0,0,0,0.12);
+}
+
+body.theme-orange .card {
+  background: rgba(255,255,255,0.2);
+  border-color: rgba(255,255,255,0.3);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+h2 {
+  margin-bottom: 1rem;
+  color: #ffdd00;
+}
+
+body.theme-white h2, body.theme-orange h2 {
+  color: #ff5722;
+}
+
+.search-bar {
+  margin-bottom: 2rem;
+}
+
+#search-input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border 0.3s;
+}
+
+body.theme-white #search-input {
+  border-color: #000;
+}
+
+body.theme-orange #search-input {
+  border-color: #fff;
+}
+
+.track-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Blocos separados */
+}
+
+.track {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.2s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.track:hover {
+  background: rgba(255,255,255,0.12);
+}
+
+.cover {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+  margin-bottom: 1rem;
+}
+
+.info {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.info h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.info p {
+  margin: 4px 0 0;
+  opacity: 0.75;
+  font-size: 1rem;
+}
+
+.audio-player {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.download-btn, .lyrics-btn {
+  padding: 0.6rem 1.2rem;
+  background: #ff00aa;
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.download-btn:hover, .lyrics-btn:hover {
+  background: #cc0088;
+}
+
+.lyrics {
+  display: none;
+  margin-top: 1rem;
+  padding: 1rem;
+  background: rgba(0,0,0,0.3);
+  border-radius: 8px;
+  white-space: pre-wrap;
+}
+
+body.theme-white .lyrics {
+  background: rgba(0,0,0,0.1);
+}
+
+body.theme-orange .lyrics {
+  background: rgba(255,255,255,0.3);
+}
+
+.volume-list,
+.card ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.volume-list li,
+.card ul li {
+  margin-bottom: 0.8rem;
+  font-size: 1.05rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  opacity: 0.6;
+  font-size: 0.95rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 3rem;
+  transition: border 0.3s;
+}
+
+body.theme-white footer {
+  border-color: rgba(0,0,0,0.1);
+}
+
+body.theme-orange footer {
+  border-color: rgba(255,255,255,0.3);
+}
+
+/* Responsividade básica */
+@media (max-width: 600px) {
+  h1 { font-size: 2.1rem; }
+  .track { padding: 1rem; }
+  .cover { width: 80px; height: 80px; }
+  .action-buttons { flex-direction: column; }
+}
+
+.lyrics-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.lyrics-content {
+  background: #1e1e2e;
+  color: #e0e0ff;
+  max-width: 700px;
+  max-height: 85vh;
+  width: 90%;
+  padding: 2rem;
+  border-radius: 16px;
+  position: relative;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+
+.theme-white .lyrics-content {
+  background: #f8f8ff;
+  color: #111;
+}
+
+.theme-orange .lyrics-content {
+  background: #fff3e0;
+  color: #222;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #ff5555;
+  cursor: pointer;
+}
+
+.lyrics-text {
+  white-space: pre-line;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.track-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: all 0.4s ease;
+}
+
+.track-list.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.track-list.grid .track {
+  flex-direction: column;
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.04);
+}
+
+.track-list.grid .cover {
+  margin: 0 auto 1rem;
+  width: 120px;
+  height: 120px;
+}
+
+.track-list.grid .info {
+  margin-bottom: 0.8rem;
+}
+
+.track-list.grid .audio-player,
+.track-list.grid .action-buttons {
+  margin-top: 0.8rem;
+}
+
+.mega-btn {
+  background: #ff6f00 !important; /* cor laranja do Mega */
+  color: white !important;
+  border: none;
+  padding: 0.7rem 1.4rem !important;
+  border-radius: 25px !important;
+  font-weight: bold !important;
+  text-decoration: none !important;
+  transition: all 0.2s !important;
+}
+
+.mega-btn:hover {
+  background: #e65100 !important;
+  transform: scale(1.05) !important;
+}
