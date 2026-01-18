@@ -1,48 +1,95 @@
-// Toggle de tema claro/escuro - salva preferência no localStorage
+// ===============================
+// THEME TOGGLE (FIXED & STABLE)
+// ===============================
 const toggleSwitch = document.getElementById('theme-switch');
-const currentTheme = localStorage.getItem('theme') || 'dark'; // Default dark
+const body = document.body;
 
-if (currentTheme === 'light') {
-    document.body.classList.add('light-mode');
-    toggleSwitch.checked = true;
+function applyTheme(theme) {
+    if (theme === 'light') {
+        body.classList.add('light-mode');
+        toggleSwitch.checked = true;
+    } else {
+        body.classList.remove('light-mode');
+        toggleSwitch.checked = false;
+    }
+
+    // força repaint (corrige bugs visuais)
+    body.style.display = 'none';
+    body.offsetHeight;
+    body.style.display = '';
 }
 
-toggleSwitch.addEventListener('change', function () {
-    if (this.checked) {
-        document.body.classList.add('light-mode');
-        localStorage.setItem('theme', 'light');
-    } else {
-        document.body.classList.remove('light-mode');
-        localStorage.setItem('theme', 'dark');
-    }
+// Tema salvo
+const savedTheme = localStorage.getItem('theme') || 'dark';
+applyTheme(savedTheme);
+
+// Listener
+toggleSwitch.addEventListener('change', () => {
+    const newTheme = toggleSwitch.checked ? 'light' : 'dark';
+    localStorage.setItem('theme', newTheme);
+    applyTheme(newTheme);
 });
 
-// Log simples para debug (opcional, pode remover)
-console.log('DeevChado Loads V1.14 carregado! Tema atual:', currentTheme);
+console.log(
+    '%cDeevChado Loads',
+    'color:#4ade80;font-weight:bold;',
+    '| Tema:',
+    savedTheme
+);
 
+
+// ===============================
+// SEARCH / FILTER (Games)
+// ===============================
 const searchInput = document.getElementById('searchInput');
-        const gameCards = document.querySelectorAll('.game-card');
-        const noResults = document.getElementById('noResults');
+const gameCards = document.querySelectorAll('.game-card');
+const noResults = document.getElementById('noResults');
 
-        searchInput.addEventListener('input', function() {
-            const filter = searchInput.value.toLowerCase().trim();
+// Cache dos títulos (performance)
+const cardsData = Array.from(gameCards).map(card => ({
+    element: card,
+    title: card.querySelector('h2')?.textContent.toLowerCase() || ''
+}));
 
-            let visibleCount = 0;
+// Função de fade (usando CSS existente)
+function showCard(card) {
+    card.style.display = '';
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(10px)';
 
-            gameCards.forEach(card => {
-                const titleElement = card.querySelector('h2');
-                if (!titleElement) return; // segurança
+    requestAnimationFrame(() => {
+        card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+    });
+}
 
-                const title = titleElement.textContent.toLowerCase();
+function hideCard(card) {
+    card.style.transition = 'opacity 0.2s ease';
+    card.style.opacity = '0';
 
-                if (title.includes(filter)) {
-                    card.style.display = ''; // mostra (volta ao default do CSS)
-                    visibleCount++;
-                } else {
-                    card.style.display = 'none';
-                }
-            });
+    setTimeout(() => {
+        card.style.display = 'none';
+    }, 200);
+}
 
-            // Mostra mensagem se nada for encontrado
-            noResults.style.display = (visibleCount === 0 && filter !== '') ? 'block' : 'none';
-        });
+// Listener de busca
+searchInput.addEventListener('input', () => {
+    const filter = searchInput.value.toLowerCase().trim();
+    let visibleCount = 0;
+
+    cardsData.forEach(({ element, title }) => {
+        if (!filter || title.includes(filter)) {
+            if (element.style.display === 'none') {
+                showCard(element);
+            }
+            visibleCount++;
+        } else {
+            hideCard(element);
+        }
+    });
+
+    // Mensagem "nenhum resultado"
+    noResults.style.display =
+        visibleCount === 0 && filter !== '' ? 'block' : 'none';
+});
