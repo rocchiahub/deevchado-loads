@@ -1,82 +1,92 @@
 <!DOCTYPE html>
+  <img src="C:/Users/CLIENTE/Downloads/deevchadoloads/assets/logos/credits.png" alt="Créditos" class="credits">
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PokéDeev LTDA.</title>
+
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="assets/logo.png">
 </head>
+
 <body>
-<header>
-  <img src="assets/logo.png" alt="PokéPacks Logo" class="logo">
-  <h1>PokéDeev LTDA.</h1>
-  <p>Downloads de Packs e Coleções de Cartas Pokémon</p>
-  <img src="C:/Users/CLIENTE/Downloads/deevchadoloads/assets/logos/credits.png"</img>
+
+<header class="header">
+  <div class="header-content">
+    <img src="assets/logo.png" alt="PokéDeev Logo" class="logo">
+    <div>
+      <h1>PokéDeev LTDA.</h1>
+      <p>Downloads de Packs e Coleções de Cartas Pokémon</p>
+    </div>
+  </div>
+
 </header>
 
-<nav>
-  <a href="#packs">Packs</a>
-  <a href="#collections">Coleções</a>
-  <a href="#updates">Atualizações</a>
+<nav class="navbar">
+  <a href="#packs">🎴 Packs</a>
+  <a href="#collections">📚 Coleções</a>
 </nav>
 
 <main>
-<section id="packs">
-  <h2>🎴 Packs</h2>
+
+<!-- PACKS -->
+<section id="packs" class="section">
+  <h2>🎴 Packs Disponíveis</h2>
+
   <div class="grid">
     <div class="card" onclick="download('https://www.mediafire.com/file/tqfkcgnjmsvy0mw/Pok%C3%A9Deev_Packs_-_GX_v1_at%C3%A9_v4.rar/file')">
-      <img src="assets/packs/pack1.webp">
+      <img src="assets/packs/gx.png" alt="Pack GX">
       <h3>Pack GX V1 - V4</h3>
     </div>
-    <div class="grid">
-      <div class="card" onclick="download('https://pixeldrain.com/u/GNtAcB2j')">
-        <img src="assets/packs/pack2.webp">
-        <h3>Pack V V1</h3>
-      </div>
-      <div class="card" onclick="download('https://pixeldrain.com/u/V44zWy4B')">
-        <img src="assets/packs/pack3.webp">
-        <h3>PACK GX|FABC V1</h3>
-      </div>
-      <div class="card" onclick="download('https://pixeldrain.com/u/uBeudkph')">
-        <img src="assets/packs/pack4.webp">
-        <h3>PACK MEGAEVOLUÇÃO V1</h3>
-      </div>
-  </div>
-</section>
 
-<section id="collections">
-  <h2>📚 Coleções</h2>
-  <div class="grid">
-
-    <div class="card" onclick="download('https://drive.google.com/SEU-LINK-AQUI')">
-      <img src="assets/collections/collectionbasesetltda.png">
-      <h3>Base Set LTDA.</h3>
+    <div class="card" onclick="download('https://pixeldrain.com/u/GNtAcB2j')">
+      <img src="assets/packs/v.png" alt="Pack V">
+      <h3>Pack V V1</h3>
     </div>
 
+    <div class="card" onclick="download('https://pixeldrain.com/u/V44zWy4B')">
+      <img src="assets/packs/gxfabc.png" alt="Pack GX FABC">
+      <h3>Pack GX | FABC V1</h3>
+    </div>
+
+    <div class="card" onclick="download('https://pixeldrain.com/u/uBeudkph')">
+      <img src="assets/packs/mv.png" alt="Pack Mega Evolução">
+      <h3>Pack Mega Evolução V1</h3>
+    </div>
   </div>
 </section>
 
-<section id="updates">
-  <h2>🆕 Atualizações</h2>
-  <ul class="updates">
-    <li>✔ Novo Pack Neo Genesis adicionado</li>
-    <li>✔ Coleção Kanto atualizada</li>
-    <li>✔ Correções visuais no site</li>
-  </ul>
+<!-- COLEÇÕES -->
+<section id="collections" class="section">
+  <h2>📚 Coleções</h2>
+
+  <div class="grid">
+    <div class="card" onclick="download('https://pixeldrain.com/u/YbL6yE2T')">
+      <img src="assets/collections/collectionbasesetltda.png" alt="Base Set LTDA">
+      <h3>Base Set LTDA.</h3>
+    </div>
+  </div>
 </section>
-<img src="assets/raichu.png" alt="Raichu" class="image">
-<img src="assets/lugia.png" alt="Lugia" class="image">
+
+<!-- LINKS EXTRAS -->
+<section class="extra-links">
+  <a href="letras/letras.html" class="btn">📒 Letras</a>
+  <a href="../index.html" class="btn">🏠 Home</a>
+  <a href="emucchia.html" class="btn">🐬 Emucchia</a>
+  <a href="rocchiacritic.html" class="btn">🎞️ RocchiaCritic</a>
+</section>
+
 </main>
 
-<footer>
-  <p>⚡ PokéPacks © 2026 — Conteúdo feito por @devideerl_, Publicado pela ROKENT DEVELOPMENT. Todos os Direitos Reservados</p>
+<footer class="footer">
+  <p>
+    ⚡ PokéDeev © 2026 — Conteúdo por <strong>@devideerl_</strong><br>
+    Publicado pela <strong>ROKENT DEVELOPMENT</strong><br>
+    Todos os direitos reservados.
+  </p>
 </footer>
 
 <script src="script.js"></script>
 </body>
 </html>
-<a href="letras\letras.html" class="letras-btn">Letras 📒</a>
-      <a href="../index.html" class="pd-btn">Home</a>
-      <a href="emucchia.html" class="emucchia-btn">Emucchia 🐬</a>
-      <a href="rocchiacritic.html" class="rc-btn">RocchiaCritic 🎞️</a>
-
