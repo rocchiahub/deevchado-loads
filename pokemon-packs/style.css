@@ -1,55 +1,106 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+/* =========================
+   VARIÁVEIS GLOBAIS
+========================= */
+:root {
+  --yellow-main: #87CEEB;
+  --yellow-light: #4052D6;
+  --red-main: #ef5350;
+  --red-dark: #c62828;
+  --text-dark: #222;
+  --white: #ffffff;
+
+  --radius: 12px;
+  --shadow: 0 6px 0 var(--red-dark);
+}
+
+/* =========================
+   RESET
+========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* =========================
+   BODY
+========================= */
 body {
-  background: linear-gradient(#ffc222, #fbc02d);
   font-family: 'Press Start 2P', cursive;
-  color: #222;
+  background: linear-gradient(var(--yellow-light), var(--yellow-main));
+  color: var(--text-dark);
+  min-height: 100vh;
 }
 
-header {
+/* =========================
+   HEADER
+========================= */
+.header {
   text-align: center;
-  padding: 30px;
+  padding: 40px 20px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .logo {
   width: 100px;
 }
 
-nav {
+.credits {
+  margin-top: 20px;
+  width: 160px;
+  opacity: 0.85;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
   display: flex;
   justify-content: center;
   gap: 30px;
-  background: #ef5350;
   padding: 15px;
+  background: var(--red-main);
 }
 
-nav a {
-  color: white;
+.navbar a {
+  color: var(--white);
   text-decoration: none;
+  font-size: 10px;
+  transition: opacity 0.2s;
 }
 
-nav a:hover {
-  text-decoration: underline;
+.navbar a:hover {
+  opacity: 0.7;
 }
 
+/* =========================
+   MAIN / SECTIONS
+========================= */
 main {
-  padding: 40px;
+  padding: 20px 10px;
 }
 
-section {
-  margin-bottom: 60px;
+.section {
+  margin-bottom: 70px;
 }
 
-h2 {
-  margin-bottom: 20px;
+.section h2 {
+  margin-bottom: 25px;
+  text-align: center;
 }
 
+/* =========================
+   GRID / CARDS
+========================= */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -57,16 +108,17 @@ h2 {
 }
 
 .card {
-  background: white;
-  border-radius: 12px;
+  background: var(--white);
+  border-radius: var(--radius);
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.2s;
-  box-shadow: 0 6px 0 #c62828;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 0 var(--red-dark);
 }
 
 .card img {
@@ -78,57 +130,96 @@ h2 {
 .card h3 {
   padding: 15px;
   text-align: center;
-  font-size: 12px;
+  font-size: 11px;
+}
+
+/* =========================
+   UPDATES
+========================= */
+.updates {
+  list-style: none;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .updates li {
-  margin-bottom: 10px;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #ef5350;
-  color: white;
+  margin-bottom: 12px;
   font-size: 10px;
 }
 
-.letras-btn {
-    background-color: #ff5722;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s;
+/* =========================
+   DECORAÇÕES
+========================= */
+.decorations {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 60px 0;
 }
 
-.pd-btn {
-    background-color: #00afff;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s;
+.decorations img {
+  width: 120px;
+  opacity: 0.9;
 }
 
-.emucchia-btn {
-    background-color: #120a8f;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s;
+/* =========================
+   BOTÕES (PADRÃO)
+========================= */
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--white);
+  font-size: 10px;
+  font-weight: bold;
+  transition: transform 0.2s, opacity 0.2s;
 }
 
-.rc-btn {
-    background-color: #03bb85;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s;
+.btn:hover {
+  transform: scale(1.05);
+  opacity: 0.85;
+}
+
+/* VARIAÇÕES DE BOTÃO */
+.btn.orange { background: #ff5722; }
+.btn.blue   { background: #00afff; }
+.btn.dark   { background: #120a8f; }
+.btn.green  { background: #03bb85; }
+
+/* =========================
+   LINKS EXTRAS
+========================= */
+.extra-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 60px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  background: var(--red-main);
+  color: var(--white);
+  text-align: center;
+  padding: 25px 15px;
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .decorations img {
+    width: 90px;
+  }
 }
